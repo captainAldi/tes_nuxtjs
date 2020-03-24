@@ -17,7 +17,7 @@
           ref="skeleton"
           type="list-item"
           tile="false"
-          min-width="800px"
+          min-width="250px"
           v-for="item in fakeData"
           :key="item"
         />
@@ -60,11 +60,9 @@ export default {
         this.loading = true
         const response = await axios.get('https://api.kawalcorona.com/indonesia/provinsi')
         this.data = response.data
-        console.log('data sudah ada')
         this.loading = false
         this.dataJambi = this.filterJambi()
       } catch (error) {
-        console.log(error)
       }
     },
     filterJambi () {
